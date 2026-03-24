@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+body {
+  background: #0e0e0e;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    --cv-page-bg: #0e0e0e;
+    --cv-card-bg: #121212;
+    --cv-border: #333333;
+    --cv-text: #e0e0e0;
+    --cv-text-muted: #d6d6de;
+    --cv-section-label: #00D4FF;
+    --cv-section-line: #333333;
+    --cv-muted-bg: #1a1a1a;
+    --cv-primary: #FFB800;
+    --cv-secondary: #00D4FF;
+    --cv-tertiary: #FF00FF;
+  }
+}
