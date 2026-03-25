@@ -100,7 +100,7 @@ const CVPage = ({ lang }: { lang: Lang }) => {
             items={
               references[lang].length > 0
                 ? t.notes.items
-                : t.notes.items.filter((item) => item.title !== "Trust & Integrity")
+                : t.notes.items.filter((item) => item.id !== "trust-integrity")
             }
             theme={theme}
           />

@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 const zNoteItem = z.object({
+  id: z.string().min(1),
   title: z.string().min(1),
   body: z.union([z.string().min(10), z.array(z.string().min(1)).min(1)]),
   link: z.object({ href: z.url(), label: z.string().min(1) }).optional(),
@@ -94,11 +95,13 @@ export const ui = zUi.parse({
       heading: "Tämä CV",
       items: [
         {
+          id: "source-code",
           title: "Lähdekoodi",
           body: "Olen julkaissut tämän CV:n lähdekoodin avoimesti — katso miten se on rakennettu.",
           link: { href: "https://github.com", label: "Katso GitHubissa →" },
         },
         {
+          id: "trust-integrity",
           title: "Luottamus & Integriteetti",
           body: [
             "Olen tehnyt kaikista suosituksista julkisesti vahvistettavia — jokainen on linkitetty tekijän itsensä avaamaan GitHub PR:ään tai LinkedIn-julkaisuun.",
@@ -106,6 +109,7 @@ export const ui = zUi.parse({
           ],
         },
         {
+          id: "static-site",
           title: "Staattinen Next.js-sivusto",
           body: [
             "Tämä sivusto rakentuu staatiseksi HTMLäksi — ei palvelinta, ei tietokantaa, ei backendiä hallinnoitavaksi tai suojattavaksi.",
@@ -113,9 +117,18 @@ export const ui = zUi.parse({
           ],
         },
         {
+          id: "pdf-export",
+          title: "PDF-vienti",
+          body: [
+            "Sivusto muodostaa PDF:än jokaisen muutoksen yhteydessä, joten erillistä tiedostoa ei tarvitse ylläpitää. Tarvittaessa nappaan aina uusimman version tältä sivulta — ei monistettua tietoa, ei vanhetuneita tiedostoja.",
+            "Luotu PDF on ATS-ystävällinen. Ihmislukijoita kannustetaan lukemaan täysi versio verkossa.",
+          ],
+        },
+        {
+          id: "contact-ux",
           title: "Yhteydenotto-UX",
           body: [
-            "En käytä erillistä sähköpostiohjelmaa, joten pelkkä mailto:-linkki tarkoittaisi osoitteen etsimistä ja manuaalista kopiointia. Yksi klikkaus kopioi sähköpostiosoitteen suoraan — ei kitkaa.",
+            "En käytä erillistä sähköpostiohjelmaa, joten pelkkä mailto:-linkki tarkoittaa osoitteen etsimistä ja manuaalista kopiointia. Tämä CV antaa käyttäjän valita kopioidakko sähköpostiosoite suoraan vai käyttää mailto-linkkiä.",
             "Pienet vuorovaikutukset kuten tämä heijastavat laajempaa kiinnostustani UX:ään: paras käyttöliittymä on sellainen, jota tuskin huomaa.",
           ],
         },
@@ -166,11 +179,13 @@ export const ui = zUi.parse({
       heading: "This CV",
       items: [
         {
+          id: "source-code",
           title: "Source Code",
           body: "I've open-sourced this CV — see how it's built.",
           link: { href: "https://github.com", label: "View on GitHub →" },
         },
         {
+          id: "trust-integrity",
           title: "Trust & Integrity",
           body: [
             "I've made every recommendation on this CV publicly verifiable — each one is linked to a GitHub PR or LinkedIn recommendation authored by the person themselves.",
@@ -178,6 +193,7 @@ export const ui = zUi.parse({
           ],
         },
         {
+          id: "static-site",
           title: "Static Next.js Export",
           body: [
             "This project is exported as a fully static site. Deploying to Github Pages or Cloudflare Pages means no backend or database to manage and secure.",
@@ -185,6 +201,7 @@ export const ui = zUi.parse({
           ],
         },
         {
+          id: "pdf-export",
           title: "PDF Export",
           body: [
             "The site generates a PDF on every deploy, so there's no separate file to maintain. When applying, I grab the latest from the site — no version drift, no stale attachments.",
@@ -192,6 +209,7 @@ export const ui = zUi.parse({
           ],
         },
         {
+          id: "contact-ux",
           title: "Contact UX",
           body: [
             "I don't use a desktop email client, so a bare mailto: link would just mean hunting for the address to copy-paste it. I let the user choose how to handle the email — less friction, more results.",
