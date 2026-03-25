@@ -98,7 +98,7 @@ export const ui = zUi.parse({
           id: "source-code",
           title: "Lähdekoodi",
           body: "Olen julkaissut tämän CV:n lähdekoodin avoimesti — katso miten se on rakennettu.",
-          link: { href: "https://github.com", label: "Katso GitHubissa →" },
+          link: { href: "https://github.com/lauri-tuumi/lauri.tuumi.com", label: "Katso GitHubissa →" },
         },
         {
           id: "trust-integrity",
@@ -182,7 +182,7 @@ export const ui = zUi.parse({
           id: "source-code",
           title: "Source Code",
           body: "I've open-sourced this CV — see how it's built.",
-          link: { href: "https://github.com", label: "View on GitHub →" },
+          link: { href: "https://github.com/lauri-tuumi/lauri.tuumi.com", label: "View on GitHub →" },
         },
         {
           id: "trust-integrity",
