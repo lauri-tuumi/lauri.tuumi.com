@@ -3,6 +3,9 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Lauri Tuumi",
+  verification: {
+    google: "EhBTEivXaWO5ENPRMgOpsXS-jGO4NXLdZA2Uc8hbFEs",
+  },
 };
 
 const RedirectLayout = ({ children }: { children: React.ReactNode }) => (
