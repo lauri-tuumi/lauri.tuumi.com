@@ -1,26 +1,22 @@
-import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "../globals.css";
-import { ui } from "@/lib/translations";
+import { createMetadata, createJsonLd } from "@/lib/seo";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: `Lauri Tuumi – ${ui.fi.subtitle}`,
-  description: ui.fi.summary[0],
-  alternates: {
-    languages: {
-      en: "/en",
-      fi: "/fi",
-    },
-  },
-};
+export const metadata = createMetadata("fi");
 
 const FiLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="fi" className={`${spaceGrotesk.className} h-full antialiased`}>
+    <head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(createJsonLd("fi")) }}
+      />
+    </head>
     <body className="min-h-full">{children}</body>
   </html>
 );

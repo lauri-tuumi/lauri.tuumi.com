@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx --tsconfig tsconfig.scripts.json scripts/generate-favicon.ts && tsx --tsconfig tsconfig.scripts.json scripts/generate-pdfs.tsx && next build",
+    "prebuild": "tsx --tsconfig tsconfig.scripts.json scripts/prebuild.ts",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
