@@ -54,8 +54,8 @@ export const ui = zUi.parse({
   fi: {
     subtitle: "Tekninen Johtaja",
     summary: [
-      "Olen full stack -ohjelmistokehittäjä ja tekninen vastaava. Hallitsen toteutusten elinkaarta arkkitehtuurista ja API-suunnittelusta skaalautuviin käyttönottoihin ja kehitykseen.",
-      "Teknisena vastaavana keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, hyödylliset yhteiset toimintamallit ja harkitut ratkaisut siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisella.",
+      "Olen full stack -tekninen johtaja. Hallitsen toteutusten elinkaarta arkkitehtuurista ja API-suunnittelusta skaalautuviin käyttönottoihin ja kehitykseen.",
+      "Keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, sekä selkeät ja joustavat yhteiset toimintamallit. Teen harkittuja ratkaisuja siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisessa.",
       "Olen kiinnostunut kehittäjäergonomiasta, periaatteellisesta arkkitehtuurista ja aidosti skaalautuvasta AI-avusteisesta kehityksestä.",
     ],
     sections: {
@@ -138,8 +138,8 @@ export const ui = zUi.parse({
   en: {
     subtitle: "Technical Lead",
     summary: [
-      "I'm a full stack software developer and tech lead. I own the full lifecycle of implementations — from architecture and API design to scalable deployment and ongoing development.",
-      "As tech lead, I focus on keeping teams productive without over-engineering: establishing shared conventions, creating useful shared patterns, and making deliberate calls about when to add structure and when to stay simple.",
+      "I'm a full stack tech lead. I own the full lifecycle of implementations — from architecture and API design to scalable deployment and ongoing development.",
+      "I focus on keeping teams productive without over-engineering: establishing shared conventions, creating clear and adaptable patterns, and making deliberate calls about when to add structure and when to stay simple.",
       "I'm interested in developer ergonomics, principled architecture, and truly scalable AI-assisted development.",
     ],
     sections: {
