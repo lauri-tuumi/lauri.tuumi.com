@@ -85,6 +85,7 @@ export const ExperienceSection = ({
                   textTransform: "uppercase",
                   whiteSpace: "nowrap",
                 }}
+                className="job-period"
               >
                 {job.period}
               </span>
@@ -132,6 +133,13 @@ export const ExperienceSection = ({
           </div>
         ))}
       </div>
+      <style>{`
+        @media (max-width: 1000px) {
+          .job-period {
+            flex-basis: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 };
