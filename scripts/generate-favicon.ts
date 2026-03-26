@@ -22,7 +22,11 @@ async function main() {
   console.log("Copied src/app/icon.svg");
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+export { main };
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

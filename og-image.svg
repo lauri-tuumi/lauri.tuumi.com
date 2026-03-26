@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0e0e0e"/>
+
+  <rect width="1200" height="4" fill="#00D4FF"/>
+  <rect y="626" width="1200" height="4" fill="#FFB800"/>
+
+  <filter id="cyan-shadow">
+    <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#00D4FF" flood-opacity="0.4"/>
+  </filter>
+  <text x="1120" y="155"
+        font-family="Arial Black,Arial,Helvetica,sans-serif"
+        font-size="140" font-weight="900" font-style="italic"
+        text-anchor="end"
+        filter="url(#cyan-shadow)">
+    <tspan fill="#ffffff">L</tspan><tspan fill="#FFB800">T</tspan>
+  </text>
+
+  <text x="100" y="295"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="86" font-weight="700"
+        fill="#e0e0e0">Lauri Tuumi</text>
+
+  <text x="100" y="375"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="42" font-weight="400"
+        fill="#FFB800">Technical Lead</text>
+
+  <text x="100" y="575"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="28"
+        fill="#555555">lauri.tuumi.com</text>
+</svg>
