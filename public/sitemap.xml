@@ -4,10 +4,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
   <url>
-    <loc>https://lauri.tuumi.com/en/</loc>
+    <loc>https://lauri.tuumi.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lauri.tuumi.com/en/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lauri.tuumi.com/" />
     <xhtml:link rel="alternate" hreflang="fi" href="https://lauri.tuumi.com/fi/" />
   </url>
   <url>
@@ -15,6 +15,6 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fi" href="https://lauri.tuumi.com/fi/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://lauri.tuumi.com/en/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lauri.tuumi.com/" />
   </url>
 </urlset>

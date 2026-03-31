@@ -1,5 +1,9 @@
-import CVPage from "@/components/CVPage";
+const EnRedirectPage = () => (
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `window.location.replace('/')`,
+    }}
+  />
+);
 
-const EnPage = () => <CVPage lang="en" />;
-
-export default EnPage;
+export default EnRedirectPage;

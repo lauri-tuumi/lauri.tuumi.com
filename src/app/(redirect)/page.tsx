@@ -1,9 +1,5 @@
-const RedirectPage = () => (
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `window.location.replace('/en')`,
-    }}
-  />
-);
+import CVPage from "@/components/CVPage";
 
-export default RedirectPage;
+const RootPage = () => <CVPage lang="en" />;
+
+export default RootPage;

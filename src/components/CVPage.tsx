@@ -21,7 +21,7 @@ const CVPage = ({ lang }: { lang: Lang }) => {
         summary={t.summary}
         toggleLabel={t.toggleLabel}
         linkedinUrl={contact.linkedin}
-        otherLangHref={`/${otherLang}`}
+        otherLangHref={otherLang === "en" ? "/" : `/${otherLang}`}
         emailSlot={<EmailButton email={getEmail()} />}
         downloadPdfSlot={
           <a
