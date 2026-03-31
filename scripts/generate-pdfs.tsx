@@ -11,7 +11,7 @@ async function main() {
 
   await Promise.all(
     zLang.options.map(async (lang) => {
-      const siteUrl = `https://lauri.tuumi.com/${lang}`;
+      const siteUrl = lang === "en" ? "https://lauri.tuumi.com" : `https://lauri.tuumi.com/${lang}`;
       const qrDataUrl = await QRCode.toDataURL(siteUrl, {
         width: 300,
         margin: 1,

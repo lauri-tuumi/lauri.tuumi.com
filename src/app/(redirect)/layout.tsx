@@ -1,27 +1,24 @@
-import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "../globals.css";
-import { createJsonLd } from "@/lib/seo";
+import { createMetadata, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://lauri.tuumi.com"),
-  title: "Lauri Tuumi",
-  verification: {
-    google: "EhBTEivXaWO5ENPRMgOpsXS-jGO4NXLdZA2Uc8hbFEs",
-  },
-};
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
-const RedirectLayout = ({ children }: { children: React.ReactNode }) => (
-  <html>
+export const metadata = createMetadata("en");
+
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang="en" className={`${spaceGrotesk.className} h-full antialiased`}>
     <head>
-      <meta httpEquiv="refresh" content="0;url=/en" />
-      <link rel="canonical" href="https://lauri.tuumi.com/en" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(createJsonLd("en")) }}
       />
     </head>
-    <body>{children}</body>
+    <body className="min-h-full">{children}</body>
   </html>
 );
 
-export default RedirectLayout;
+export default RootLayout;
