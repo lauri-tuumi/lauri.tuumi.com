@@ -26,6 +26,7 @@
 /public/lauri-tuumi-cv-fi.pdf
 /src/app/favicon.ico
 /src/app/icon.svg
+/src/app/opengraph-image.png
 *.pem
 
 # debug
