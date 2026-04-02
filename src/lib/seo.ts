@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ui } from "@/lib/translations";
 import { contact } from "@/data/contact";
 
-const BASE_URL = "https://lauri.tuumi.com";
+export const BASE_URL = "https://lauri.tuumi.com";
 const GOOGLE_VERIFICATION = "EhBTEivXaWO5ENPRMgOpsXS-jGO4NXLdZA2Uc8hbFEs";
 
 export function createMetadata(lang: "en" | "fi"): Metadata {
