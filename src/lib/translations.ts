@@ -9,6 +9,7 @@ const zNoteItem = z.object({
 
 const zUiEntry = z.object({
   subtitle: z.string().min(1),
+  metaDescription: z.string().min(1),
   summary: z.array(z.string().min(10)).length(3),
   sections: z.object({
     education: z.string().min(1),
@@ -52,6 +53,7 @@ const zUi = z.object({
 
 const uiEn = {
   subtitle: "Technical Lead",
+  metaDescription: "Full-stack Tech Lead. From architecture and API design to scalable deployment & ongoing development — keeping teams productive without over-engineering.",
   summary: [
     "I'm a full stack tech lead. I own the full lifecycle of implementations — from architecture and API design to scalable deployment and ongoing development.",
     "I focus on keeping teams productive without over-engineering: establishing shared conventions, creating clear and adaptable patterns, and making deliberate calls about when to add structure and when to stay simple.",
@@ -137,6 +139,7 @@ const uiEn = {
 
 const uiFi = {
   subtitle: "Tekninen Johtaja",
+  metaDescription: "Full Stack Tech Lead. Arkkitehtuurista ja API-suunnittelusta skaalautuvaan käyttöönottoon ja jatkuvaan kehitykseen — tiimien tuottavuus ilman ylisuunnittelua.",
   summary: [
     "Olen full stack -tekninen johtaja. Hallitsen toteutusten elinkaarta arkkitehtuurista ja API-suunnittelusta skaalautuviin käyttönottoihin ja kehitykseen.",
     "Keskityn tiimien tuottavuuteen ilman ylisuunnittelua: vahvat yhteiset käytänteet, sekä selkeät ja joustavat yhteiset toimintamallit. Teen harkittuja ratkaisuja siitä, milloin lisätä rakenetta ja milloin pysyä yksinkertaisessa.",

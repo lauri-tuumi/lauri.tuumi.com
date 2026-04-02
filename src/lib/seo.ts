@@ -13,7 +13,7 @@ export function createMetadata(lang: "en" | "fi"): Metadata {
   return {
     metadataBase: new URL(BASE_URL),
     title: `Lauri Tuumi – ${t.subtitle}`,
-    description: t.summary[0],
+    description: t.metaDescription,
     verification: { google: GOOGLE_VERIFICATION },
     alternates: {
       canonical: lang === "en" ? "/" : "/fi",
@@ -23,7 +23,7 @@ export function createMetadata(lang: "en" | "fi"): Metadata {
       type: "profile",
       url: lang === "en" ? "/" : "/fi",
       title: `Lauri Tuumi – ${t.subtitle}`,
-      description: t.summary[0],
+      description: t.metaDescription,
       siteName: "Lauri Tuumi",
       locale,
       alternateLocale: [altLocale],
@@ -32,7 +32,7 @@ export function createMetadata(lang: "en" | "fi"): Metadata {
     twitter: {
       card: "summary_large_image",
       title: `Lauri Tuumi – ${t.subtitle}`,
-      description: t.summary[0],
+      description: t.metaDescription,
       images: ["/opengraph-image.png"],
     },
   };
@@ -46,7 +46,7 @@ export function createJsonLd(lang: "en" | "fi"): object {
     name: "Lauri Tuumi",
     url: lang === "en" ? BASE_URL : `${BASE_URL}/fi`,
     jobTitle: t.subtitle,
-    description: t.summary[0],
+    description: t.metaDescription,
     sameAs: [contact.linkedin, "https://github.com/lauri-tuumi"],
   };
 }
