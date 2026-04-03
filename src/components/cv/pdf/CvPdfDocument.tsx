@@ -16,10 +16,12 @@ export const CvPdfDocument = ({
   lang,
   qrDataUrl,
   siteUrl,
+  pfpSrc,
 }: {
   lang: Lang;
   qrDataUrl: string;
   siteUrl: string;
+  pfpSrc: string;
 }) => {
   const t = ui[lang];
   const edu = education[lang];
@@ -41,12 +43,8 @@ export const CvPdfDocument = ({
               </Text>
               <Text style={styles.subtitle}>{t.subtitle}</Text>
             </View>
-            <View style={styles.logoBox}>
-              <Text>
-                <Text style={{ fontSize: 20, fontFamily: "Helvetica-BoldOblique", color: "#ffffff" }}>L</Text>
-                <Text style={{ fontSize: 20, fontFamily: "Helvetica-BoldOblique", color: GOLD }}>T</Text>
-              </Text>
-            </View>
+            {/* eslint-disable-next-line jsx-a11y/alt-text */}
+            <Image src={pfpSrc} style={styles.pfpImage} />
           </View>
         </View>
 

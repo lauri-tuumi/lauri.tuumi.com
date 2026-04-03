@@ -91,16 +91,14 @@ export const styles = StyleSheet.create({
     alignItems: "flex-start",
     gap: 14,
   },
-  logoBox: {
-    width: 39,
-    height: 39,
-    borderRadius: 8,
-    backgroundColor: "#1e293b",
+  pfpImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 4,
     borderWidth: 1.5,
     borderColor: colors.primary,
-    alignItems: "center",
-    justifyContent: "center",
     flexShrink: 0,
+    objectFit: "cover",
   },
   headerContent: {
     flex: 1,
