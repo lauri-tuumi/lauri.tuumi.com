@@ -27,9 +27,10 @@ async function main() {
         margin: 1,
         errorCorrectionLevel: "M",
       });
+      const pfpSrc = path.join(process.cwd(), "public", "pfp.jpg");
       const outPath = path.join(process.cwd(), "public", getPdfFilename(lang));
       await renderToFile(
-        <CvPdfDocument lang={lang} qrDataUrl={qrDataUrl} siteUrl={siteUrl} />,
+        <CvPdfDocument lang={lang} qrDataUrl={qrDataUrl} siteUrl={siteUrl} pfpSrc={pfpSrc} />,
         outPath
       );
       console.log(`Generated ${outPath}`);

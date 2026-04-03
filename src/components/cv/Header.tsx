@@ -101,21 +101,17 @@ export const Header = ({
               width: 108,
               height: 108,
               border: "2px solid var(--cv-primary)",
-              background: "var(--cv-muted-bg)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "1.6rem",
-              fontWeight: 900,
-              color: "var(--cv-primary)",
               flexShrink: 0,
-              letterSpacing: "-0.02em",
-              textTransform: "uppercase",
-              fontStyle: "italic",
               position: "relative",
+              overflow: "hidden",
             }}
           >
-            <span>LT</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/pfp.jpg"
+              alt="Lauri Tuumi"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
             {/* Corner accent */}
             <div
               style={{
