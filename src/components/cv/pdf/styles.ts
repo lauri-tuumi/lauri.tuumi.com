@@ -1,19 +1,18 @@
 import { StyleSheet } from "@react-pdf/renderer";
+import { colors } from "@/lib/colors";
 
-const BLUE = "#1e3a8a";
-const AMBER = "#f59e0b";
-const DARK = "#0f172a";
-const GRAY = "#64748b";
-const LIGHT_GRAY = "#94a3b8";
-const BORDER = "#e2e8f0";
+const NAVY = "#1e3a8a";
+const TEXT = "#0f172a";
+const TEXT_MUTED = "#64748b";
 
-export { BLUE, AMBER, DARK, GRAY, LIGHT_GRAY };
+export const GOLD = colors.primary;
 
 export const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 9,
-    color: DARK,
+    color: TEXT,
+    backgroundColor: "#ffffff",
     paddingTop: 0,
     paddingBottom: 24,
     paddingHorizontal: 0,
@@ -23,7 +22,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 14,
-    backgroundColor: BLUE,
+    backgroundColor: NAVY,
     paddingHorizontal: 28,
     paddingVertical: 14,
     marginBottom: 0,
@@ -43,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   qrUrl: {
     fontSize: 9,
-    color: AMBER,
+    color: colors.primary,
     marginBottom: 3,
   },
   qrNote: {
@@ -52,35 +51,27 @@ export const styles = StyleSheet.create({
   },
   // Header section
   headerSection: {
-    backgroundColor: DARK,
+    backgroundColor: TEXT,
     paddingHorizontal: 16,
     paddingTop: 16,
     paddingBottom: 16,
     borderBottomWidth: 3,
-    borderBottomColor: AMBER,
+    borderBottomColor: colors.primary,
   },
   name: {
     fontSize: 26,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: "Space Grotesk",
+    fontWeight: 700,
     color: "#ffffff",
     marginBottom: 3,
   },
   nameAccent: {
-    color: AMBER,
+    color: colors.primary,
   },
   subtitle: {
     fontSize: 11,
-    color: LIGHT_GRAY,
+    color: "#94a3b8",
     marginBottom: 6,
-  },
-  contactRow: {
-    flexDirection: "row",
-    gap: 16,
-    flexWrap: "wrap",
-  },
-  contactItem: {
-    fontSize: 8,
-    color: LIGHT_GRAY,
   },
   // Body
   body: {
@@ -105,6 +96,8 @@ export const styles = StyleSheet.create({
     height: 39,
     borderRadius: 8,
     backgroundColor: "#1e293b",
+    borderWidth: 1.5,
+    borderColor: colors.primary,
     alignItems: "center",
     justifyContent: "center",
     flexShrink: 0,
@@ -116,11 +109,11 @@ export const styles = StyleSheet.create({
   sectionHeading: {
     fontSize: 9,
     fontFamily: "Helvetica-Bold",
-    color: BLUE,
+    color: NAVY,
     textTransform: "uppercase",
     letterSpacing: 1,
     borderBottomWidth: 1,
-    borderBottomColor: BORDER,
+    borderBottomColor: "#e2e8f0",
     paddingBottom: 4,
     marginBottom: 8,
   },
@@ -131,16 +124,16 @@ export const styles = StyleSheet.create({
   degreeTitle: {
     fontSize: 9,
     fontFamily: "Helvetica-Bold",
-    color: DARK,
+    color: TEXT,
   },
   degreeSchool: {
     fontSize: 8,
-    color: GRAY,
+    color: TEXT_MUTED,
     marginBottom: 1,
   },
   degreeYears: {
     fontSize: 8,
-    color: LIGHT_GRAY,
+    color: TEXT_MUTED,
     marginBottom: 6,
   },
   // Skills
@@ -152,35 +145,41 @@ export const styles = StyleSheet.create({
   },
   skillDot: {
     fontSize: 9,
-    color: AMBER,
+    color: colors.primary,
   },
   skillDotFamiliar: {
     fontSize: 9,
-    color: LIGHT_GRAY,
+    color: TEXT_MUTED,
   },
   skillName: {
     fontSize: 8.5,
-    color: DARK,
+    color: TEXT,
   },
   skillTierLabel: {
     fontSize: 7.5,
     fontFamily: "Helvetica-Bold",
-    color: LIGHT_GRAY,
+    color: TEXT_MUTED,
     textTransform: "uppercase",
     letterSpacing: 0.8,
     marginBottom: 4,
     marginTop: 2,
   },
   // Experience
+  jobCard: {
+    borderLeftWidth: 2,
+    borderLeftColor: colors.primary,
+    paddingLeft: 8,
+    marginBottom: 10,
+  },
   jobTitle: {
     fontSize: 9.5,
     fontFamily: "Helvetica-Bold",
-    color: DARK,
+    color: TEXT,
     marginBottom: 1,
   },
   jobMeta: {
     fontSize: 8,
-    color: GRAY,
+    color: TEXT_MUTED,
     marginBottom: 4,
   },
   bullet: {
@@ -191,39 +190,36 @@ export const styles = StyleSheet.create({
   },
   bulletDash: {
     fontSize: 8,
-    color: AMBER,
+    color: colors.primary,
     width: 8,
   },
   bulletText: {
     fontSize: 8,
-    color: DARK,
+    color: TEXT,
     flex: 1,
     lineHeight: 1.4,
-  },
-  jobBlock: {
-    marginBottom: 10,
   },
   // References
   refName: {
     fontSize: 9,
     fontFamily: "Helvetica-Bold",
-    color: DARK,
+    color: TEXT,
   },
   refTitle: {
     fontSize: 8,
-    color: GRAY,
+    color: TEXT_MUTED,
     marginBottom: 3,
   },
   refQuote: {
     fontSize: 7.5,
-    color: GRAY,
+    color: TEXT_MUTED,
     fontFamily: "Helvetica-Oblique",
     lineHeight: 1.5,
     marginBottom: 3,
   },
   refLink: {
     fontSize: 7.5,
-    color: BLUE,
+    color: NAVY,
     textDecoration: "underline",
   },
   refBlock: {

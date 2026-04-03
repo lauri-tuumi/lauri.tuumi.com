@@ -29,6 +29,10 @@ const zUiEntry = z.object({
   }),
   currentLabel: z.string().min(1),
   linkedin: z.string().min(1),
+  pdf: z.object({
+    qrHeadline: z.string().min(1),
+    qrNote: z.string().min(1),
+  }),
   toggleLabel: z.string().min(1),
   referenceVerification: z.object({
     pr: z.string().min(1),
@@ -77,6 +81,10 @@ const uiEn = {
   },
   currentLabel: "present",
   linkedin: "LinkedIn",
+  pdf: {
+    qrHeadline: "View the CV online",
+    qrNote: "This PDF is generated from my CV website. Click the address above for the most up-to-date information!",
+  },
   toggleLabel: "Lue suomeksi",
   referenceVerification: {
     pr: "View GitHub PR →",
@@ -163,6 +171,10 @@ const uiFi = {
   },
   currentLabel: "nykyinen",
   linkedin: "LinkedIn",
+  pdf: {
+    qrHeadline: "Katso CV verkossa",
+    qrNote: "Tämä PDF on luotu CV-verkkosivultani. Klikkaa yllä olevaa osoitetta nähdäksesi ajantasaisimmat tiedot!",
+  },
   toggleLabel: "Read in English",
   referenceVerification: {
     pr: "Katso GitHub PR →",

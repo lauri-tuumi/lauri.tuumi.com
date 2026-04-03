@@ -8,9 +8,9 @@ import {
   Link,
 } from "@react-pdf/renderer";
 import type { Lang } from "@/lib/types";
-import { contact, skills, education, experience } from "@/data";
+import { skills, education, experience } from "@/data";
 import { ui } from "@/lib/translations";
-import { styles, AMBER } from "./styles";
+import { styles, GOLD } from "./styles";
 
 export const CvPdfDocument = ({
   lang,
@@ -40,19 +40,11 @@ export const CvPdfDocument = ({
                 <Text style={styles.nameAccent}>Tuumi</Text>
               </Text>
               <Text style={styles.subtitle}>{t.subtitle}</Text>
-              <View style={styles.contactRow}>
-                <Text style={styles.contactItem}>{contact.linkedin}</Text>
-              </View>
-              <Text style={{ fontSize: 7, color: "#475569", marginTop: 5, fontFamily: "Helvetica-Oblique" }}>
-                {lang === "en"
-                  ? `Contact details omitted from this file — this PDF is publicly available and indexed to prevent scraping. Visit ${siteUrl.replace("https://", "")} to get in touch.`
-                  : `Yhteystiedot jätetty pois tästä tiedostosta — tämä PDF on julkisesti saatavilla ja indeksoitu, eikä sisällä henkilökohtaisia tietoja roskapostin estämiseksi. Ota yhteyttä osoitteessa ${siteUrl.replace("https://", "")}.`}
-              </Text>
             </View>
             <View style={styles.logoBox}>
               <Text>
-                <Text style={{ fontSize: 18, fontFamily: "Helvetica-Bold", color: "#ffffff" }}>L</Text>
-                <Text style={{ fontSize: 18, fontFamily: "Helvetica-Bold", color: AMBER }}>T</Text>
+                <Text style={{ fontSize: 20, fontFamily: "Helvetica-BoldOblique", color: "#ffffff" }}>L</Text>
+                <Text style={{ fontSize: 20, fontFamily: "Helvetica-BoldOblique", color: GOLD }}>T</Text>
               </Text>
             </View>
           </View>
@@ -63,16 +55,10 @@ export const CvPdfDocument = ({
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image src={qrDataUrl} style={styles.qrImage} />
           <View style={styles.qrTextBlock}>
-            <Text style={styles.qrHeadline}>
-              {lang === "en"
-                ? "View the CV online"
-                : "Katso CV verkossa"}
-            </Text>
+            <Text style={styles.qrHeadline}>{t.pdf.qrHeadline}</Text>
             <Link src={siteUrl} style={styles.qrUrl}>{siteUrl.replace("https://", "")}</Link>
             <Text style={styles.qrNote}>
-              {lang === "en"
-                ? `This PDF is generated from the CV website. Visit ${siteUrl.replace("https://", "")} for the most up-to-date information.`
-                : `Tämä PDF on luotu CV-sivustolta. Vieraile sivustolla ajantasaisimpien tietojen saamiseksi: ${siteUrl.replace("https://", "")}.`}
+              {t.pdf.qrNote}
             </Text>
           </View>
         </View>
@@ -84,7 +70,7 @@ export const CvPdfDocument = ({
             <View style={styles.section}>
               <Text style={styles.sectionHeading}>{t.sections.experience}</Text>
               {exp.map((job, i) => (
-                <View key={i} style={styles.jobBlock}>
+                <View key={i} style={styles.jobCard}>
                   <Text style={styles.jobTitle}>{job.title}</Text>
                   <Text style={styles.jobMeta}>
                     {job.company} · {job.period}
