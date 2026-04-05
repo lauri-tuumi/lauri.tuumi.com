@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
-import { zLang } from "@/lib/types";
-import { BASE_URL } from "@/lib/seo";
+import { zLang, type Lang } from "@/lib/types";
+import { BASE_URL, getLangPath } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-function langUrl(lang: string) {
-  return `${BASE_URL}${lang === "en" ? "/" : `/${lang}/`}`;
+function langUrl(lang: Lang) {
+  return `${BASE_URL}${getLangPath(lang).slice(1)}`;
 }
 
 const alternateLanguages = Object.fromEntries(

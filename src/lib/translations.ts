@@ -34,6 +34,15 @@ const zUiEntry = z.object({
     qrNote: z.string().min(1),
   }),
   toggleLabel: z.string().min(1),
+  email: z.object({
+    cta: z.string().min(1),
+    dialogTitle: z.string().min(1),
+    copy: z.string().min(1),
+    copied: z.string().min(1),
+    copyFailed: z.string().min(1),
+    openMailApp: z.string().min(1),
+    close: z.string().min(1),
+  }),
   referenceVerification: z.object({
     pr: z.string().min(1),
     linkedin_post: z.string().min(1),
@@ -86,6 +95,15 @@ const uiEn = {
     qrNote: "This PDF is generated from my CV website. Click the address above for the most up-to-date information!",
   },
   toggleLabel: "Lue suomeksi",
+  email: {
+    cta: "Email me",
+    dialogTitle: "Get in touch",
+    copy: "Copy address",
+    copied: "Copied!",
+    copyFailed: "Copy failed. Use the address below.",
+    openMailApp: "Open in mail app",
+    close: "Close",
+  },
   referenceVerification: {
     pr: "View GitHub PR →",
     linkedin_post: "View LinkedIn Post →",
@@ -176,6 +194,15 @@ const uiFi = {
     qrNote: "Tämä PDF on luotu CV-verkkosivultani. Klikkaa yllä olevaa osoitetta nähdäksesi ajantasaisimmat tiedot!",
   },
   toggleLabel: "Read in English",
+  email: {
+    cta: "Lähetä sähköpostia",
+    dialogTitle: "Ota yhteyttä",
+    copy: "Kopioi osoite",
+    copied: "Kopioitu!",
+    copyFailed: "Kopiointi epäonnistui. Käytä alla olevaa osoitetta.",
+    openMailApp: "Avaa sähköpostisovelluksessa",
+    close: "Sulje",
+  },
   referenceVerification: {
     pr: "Katso GitHub PR →",
     linkedin_post: "Katso LinkedIn-julkaisu →",
