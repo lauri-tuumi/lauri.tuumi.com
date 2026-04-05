@@ -4,12 +4,15 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://lauri.tuumi.com"),
   alternates: { canonical: "/" },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const EnRedirectLayout = ({ children }: { children: React.ReactNode }) => (
-  <html>
+  <html lang="en">
     <head>
-      <meta httpEquiv="refresh" content="0;url=/" />
       <link rel="canonical" href="https://lauri.tuumi.com/" />
     </head>
     <body>{children}</body>

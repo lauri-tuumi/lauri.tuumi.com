@@ -10,7 +10,7 @@ import {
 import type { Lang } from "@/lib/types";
 import { skills, education, experience } from "@/data";
 import { ui } from "@/lib/translations";
-import { styles, GOLD } from "./styles";
+import { styles } from "./styles";
 
 export const CvPdfDocument = ({
   lang,

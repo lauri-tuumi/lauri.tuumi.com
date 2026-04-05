@@ -5,10 +5,15 @@ import { contact } from "@/data/contact";
 export const BASE_URL = "https://lauri.tuumi.com";
 const GOOGLE_VERIFICATION = "EhBTEivXaWO5ENPRMgOpsXS-jGO4NXLdZA2Uc8hbFEs";
 
+export function getLangPath(lang: "en" | "fi"): "/" | "/fi/" {
+  return lang === "en" ? "/" : "/fi/";
+}
+
 export function createMetadata(lang: "en" | "fi"): Metadata {
   const t = ui[lang];
   const locale = lang === "en" ? "en_US" : "fi_FI";
   const altLocale = lang === "en" ? "fi_FI" : "en_US";
+  const path = getLangPath(lang);
 
   return {
     metadataBase: new URL(BASE_URL),
@@ -16,12 +21,12 @@ export function createMetadata(lang: "en" | "fi"): Metadata {
     description: t.metaDescription,
     verification: { google: GOOGLE_VERIFICATION },
     alternates: {
-      canonical: lang === "en" ? "/" : "/fi",
-      languages: { en: "/", fi: "/fi" },
+      canonical: path,
+      languages: { en: "/", fi: "/fi/" },
     },
     openGraph: {
       type: "profile",
-      url: lang === "en" ? "/" : "/fi",
+      url: path,
       title: `Lauri Tuumi – ${t.subtitle}`,
       description: t.metaDescription,
       siteName: "Lauri Tuumi",
@@ -44,7 +49,7 @@ export function createJsonLd(lang: "en" | "fi"): object {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Lauri Tuumi",
-    url: lang === "en" ? BASE_URL : `${BASE_URL}/fi`,
+    url: `${BASE_URL}${getLangPath(lang).slice(1)}`,
     jobTitle: t.subtitle,
     description: t.metaDescription,
     sameAs: [contact.linkedin, "https://github.com/lauri-tuumi"],

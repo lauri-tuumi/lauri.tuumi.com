@@ -3,17 +3,34 @@ import React, { useState } from "react";
 import { EmailIcon } from "../icons/EmailIcon";
 import { EmailModal } from "./EmailModal";
 
-export const EmailButton = ({ email }: { email: string }) => {
+type EmailLabels = {
+  cta: string;
+  dialogTitle: string;
+  copy: string;
+  copied: string;
+  copyFailed: string;
+  openMailApp: string;
+  close: string;
+};
+
+export const EmailButton = ({ email, labels }: { email: string; labels: EmailLabels }) => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopyError(false);
+      setCopied(true);
+      window.setTimeout(() => {
+        setCopied(false);
+        setOpen(false);
+      }, 1200);
+    } catch {
       setCopied(false);
-      setOpen(false);
-    }, 1200);
+      setCopyError(true);
+    }
   };
 
   return (
@@ -35,14 +52,20 @@ export const EmailButton = ({ email }: { email: string }) => {
           letterSpacing: "0.05em",
         }}
       >
-        <EmailIcon /> Email me
+        <EmailIcon /> {labels.cta}
       </button>
       <EmailModal
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => {
+          setOpen(false);
+          setCopied(false);
+          setCopyError(false);
+        }}
         email={email}
         copied={copied}
+        copyError={copyError}
         onCopy={handleCopy}
+        labels={labels}
       />
     </>
   );
