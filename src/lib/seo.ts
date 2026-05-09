@@ -9,6 +9,10 @@ export function getLangPath(lang: "en" | "fi"): "/" | "/fi/" {
   return lang === "en" ? "/" : "/fi/";
 }
 
+export function getLangUrl(lang: "en" | "fi"): string {
+  return new URL(getLangPath(lang), BASE_URL).href;
+}
+
 export function createMetadata(lang: "en" | "fi"): Metadata {
   const t = ui[lang];
   const locale = lang === "en" ? "en_US" : "fi_FI";
@@ -47,11 +51,23 @@ export function createJsonLd(lang: "en" | "fi"): object {
   const t = ui[lang];
   return {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Lauri Tuumi",
-    url: `${BASE_URL}${getLangPath(lang).slice(1)}`,
-    jobTitle: t.subtitle,
-    description: t.metaDescription,
-    sameAs: [contact.linkedin, "https://github.com/lauri-tuumi"],
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        name: "Lauri Tuumi",
+        alternateName: ["Lauri Tuumi CV", "Lauri Tuumi Portfolio"],
+        url: `${BASE_URL}/`,
+      },
+      {
+        "@type": "Person",
+        "@id": `${BASE_URL}/#person`,
+        name: "Lauri Tuumi",
+        url: getLangUrl(lang),
+        jobTitle: t.subtitle,
+        description: t.metaDescription,
+        sameAs: [contact.linkedin, "https://github.com/lauri-tuumi"],
+      },
+    ],
   };
 }
