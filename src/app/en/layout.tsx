@@ -12,9 +12,6 @@ export const metadata: Metadata = {
 
 const EnRedirectLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en">
-    <head>
-      <link rel="canonical" href="https://lauri.tuumi.com/" />
-    </head>
     <body>{children}</body>
   </html>
 );
