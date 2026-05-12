@@ -35,10 +35,5 @@ export const education = zEducation.parse({
       school: "Saranen Consulting Oy",
       years: "06/2024 – 10/2024",
     },
-    {
-      degree: "Finnish Matriculation Examination",
-      school: "Tampere Lyseo Upper Secondary School",
-      years: "2014 – 2018",
-    },
   ],
 });
