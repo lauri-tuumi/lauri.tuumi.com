@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import type { Theme } from "@/lib/types";
 import { SectionHeading } from "../SectionHeading";
 
@@ -6,6 +7,7 @@ type NoteItem = {
   title: string;
   body: string | string[];
   link?: { href: string; label: string };
+  logo?: { src: string; pdfSrc: string; alt: string };
 };
 
 export const ProjectNotesSection = ({
@@ -35,16 +37,49 @@ export const ProjectNotesSection = ({
             }}
           >
             <div
-              style={{
-                fontWeight: 800,
-                fontSize: "0.78rem",
-                color: theme.text,
-                marginBottom: "0.35rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
+              style={
+                item.logo
+                  ? {
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                      marginBottom: "0.75rem",
+                    }
+                  : undefined
+              }
             >
-              {item.title}
+              {item.logo && (
+                <Image
+                  src={item.logo.src}
+                  alt={item.logo.alt}
+                  width={74}
+                  height={46}
+                  style={{
+                    display: "block",
+                    flexShrink: 0,
+                  }}
+                />
+              )}
+              <div
+                style={{
+                  fontWeight: 800,
+                  fontSize: "0.78rem",
+                  color: theme.text,
+                  marginBottom: item.logo ? 0 : "0.35rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  lineHeight: 1.25,
+                }}
+              >
+                {item.logo
+                  ? item.title.split(" ").map((word) => (
+                      <React.Fragment key={word}>
+                        {word}
+                        <br />
+                      </React.Fragment>
+                    ))
+                  : item.title}
+              </div>
             </div>
             <div
               style={{

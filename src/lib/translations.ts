@@ -5,6 +5,11 @@ const zNoteItem = z.object({
   title: z.string().min(1),
   body: z.union([z.string().min(10), z.array(z.string().min(1)).min(1)]),
   link: z.object({ href: z.url(), label: z.string().min(1) }).optional(),
+  logo: z.object({
+    src: z.string().min(1),
+    pdfSrc: z.string().min(1),
+    alt: z.string().min(1),
+  }).optional(),
 });
 
 const zUiEntry = z.object({
@@ -13,6 +18,7 @@ const zUiEntry = z.object({
   summary: z.array(z.string().min(10)).length(3),
   sections: z.object({
     education: z.string().min(1),
+    projects: z.string().min(1),
     skills: z.string().min(1),
     experience: z.string().min(1),
     references: z.string().min(1),
@@ -57,6 +63,9 @@ const zUiEntry = z.object({
     heading: z.string().min(1),
     items: z.array(zNoteItem).min(1),
   }),
+  projects: z.object({
+    items: z.array(zNoteItem).min(1),
+  }),
 });
 
 const zUi = z.object({
@@ -74,6 +83,7 @@ const uiEn = {
   ],
   sections: {
     education: "Education",
+    projects: "Projects",
     skills: "Skills",
     experience: "Work Experience",
     references: "References",
@@ -161,6 +171,20 @@ const uiEn = {
       },
     ],
   },
+  projects: {
+    items: [
+      {
+        id: "pories-website",
+        title: "PoriES Website",
+        body: [
+          "Built the Pori Entrepreneurship Society website as a Next.js app hosted in the cloud, with CI/CD via Git and Coolify handling deployment.",
+          "In addition to static content and a links page, the site allows easy event publishing so non-technical content administrators can work efficiently without touching application code.",
+        ],
+        link: { href: "https://www.pories.fi", label: "Visit site →" },
+        logo: { src: "/pories-logo.svg", pdfSrc: "/pories-logo.png", alt: "PoriES logo" },
+      },
+    ],
+  },
 } satisfies z.infer<typeof zUiEntry>;
 
 const uiFi = {
@@ -173,6 +197,7 @@ const uiFi = {
   ],
   sections: {
     education: "Koulutus",
+    projects: "Projektit",
     skills: "Taidot",
     experience: "Työkokemus",
     references: "Suosittelijat",
@@ -257,6 +282,20 @@ const uiFi = {
           "En käytä erillistä sähköpostiohjelmaa, joten pelkkä mailto:-linkki tarkoittaa osoitteen etsimistä ja manuaalista kopiointia. Tämä CV antaa käyttäjän valita kopioidakko sähköpostiosoite suoraan vai käyttää mailto-linkkiä.",
           "Pienet vuorovaikutukset kuten tämä heijastavat laajempaa kiinnostustani UX:ään: paras käyttöliittymä on sellainen, jota tuskin huomaa.",
         ],
+      },
+    ],
+  },
+  projects: {
+    items: [
+      {
+        id: "pories-website",
+        title: "PoriES-verkkosivusto",
+        body: [
+          "Rakensin Pori Entrepreneurship Societyn verkkosivuston pilvessä hostatuksi Next.js-sovellukseksi, jossa CI/CD kulkee Gitin kautta ja Coolify hoitaa käyttöönoton.",
+          "Staattisen sisällön ja linkkisivun lisäksi sivusto mahdollistaa helpon tapahtumajulkaisun, jotta ei-tekniset sisällönhallinnoijat voivat työskennellä tehokkaasti ilman sovelluskoodiin koskemista.",
+        ],
+        link: { href: "https://www.pories.fi", label: "Avaa sivusto →" },
+        logo: { src: "/pories-logo.svg", pdfSrc: "/pories-logo.png", alt: "PoriES-logo" },
       },
     ],
   },

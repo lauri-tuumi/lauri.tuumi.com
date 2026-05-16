@@ -80,16 +80,21 @@ const CVPage = ({ lang }: { lang: Lang }) => {
 
         {/* Right sidebar */}
         <aside style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <EducationSection
+            items={education[lang]}
+            label={t.sections.education}
+            theme={theme}
+          />
+          <ProjectNotesSection
+            heading={t.sections.projects}
+            items={t.projects.items}
+            theme={theme}
+          />
           <SkillsSection
             items={skills[lang]}
             label={t.sections.skills}
             theme={theme}
             tierLabels={t.skillTiers}
-          />
-          <EducationSection
-            items={education[lang]}
-            label={t.sections.education}
-            theme={theme}
           />
         </aside>
 

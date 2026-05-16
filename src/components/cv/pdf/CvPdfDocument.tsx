@@ -17,11 +17,13 @@ export const CvPdfDocument = ({
   qrDataUrl,
   siteUrl,
   pfpSrc,
+  publicDir,
 }: {
   lang: Lang;
   qrDataUrl: string;
   siteUrl: string;
   pfpSrc: string;
+  publicDir: string;
 }) => {
   const t = ui[lang];
   const edu = education[lang];
@@ -84,8 +86,49 @@ export const CvPdfDocument = ({
             </View>
           </View>
 
-          {/* Right column — Skills + Education */}
+          {/* Right column — Education + Projects + Skills */}
           <View style={styles.rightCol}>
+            {/* Education */}
+            <View style={styles.section}>
+              <Text style={styles.sectionHeading}>{t.sections.education}</Text>
+              {edu.map((d, i) => (
+                <View key={i}>
+                  <Text style={styles.degreeTitle}>{d.degree}</Text>
+                  <Text style={styles.degreeSchool}>{d.school}</Text>
+                  <Text style={styles.degreeYears}>{d.years}</Text>
+                </View>
+              ))}
+            </View>
+
+            {/* Projects */}
+            <View style={styles.section}>
+              <Text style={styles.sectionHeading}>{t.sections.projects}</Text>
+              {t.projects.items.map((project) => (
+                <View key={project.id} style={styles.projectCard}>
+                  <View style={styles.projectHeader}>
+                    {project.logo && (
+                      // eslint-disable-next-line jsx-a11y/alt-text
+                      <Image
+                        src={`${publicDir}${project.logo.pdfSrc}`}
+                        style={styles.projectLogo}
+                      />
+                    )}
+                    <Text style={styles.projectTitle}>
+                      {project.logo ? project.title.replace(" ", "\n") : project.title}
+                    </Text>
+                  </View>
+                  {(Array.isArray(project.body) ? project.body : [project.body]).map((body, i) => (
+                    <Text key={i} style={styles.projectBody}>{body}</Text>
+                  ))}
+                  {project.link && (
+                    <Link src={project.link.href} style={styles.projectLink}>
+                      {project.link.label}
+                    </Link>
+                  )}
+                </View>
+              ))}
+            </View>
+
             {/* Skills */}
             <View style={styles.section}>
               <Text style={styles.sectionHeading}>{t.sections.skills}</Text>
@@ -103,18 +146,6 @@ export const CvPdfDocument = ({
                 <View key={i} style={styles.skillRow}>
                   <Text style={styles.skillDotFamiliar}>-</Text>
                   <Text style={styles.skillName}>{s.name}</Text>
-                </View>
-              ))}
-            </View>
-
-            {/* Education */}
-            <View style={styles.section}>
-              <Text style={styles.sectionHeading}>{t.sections.education}</Text>
-              {edu.map((d, i) => (
-                <View key={i}>
-                  <Text style={styles.degreeTitle}>{d.degree}</Text>
-                  <Text style={styles.degreeSchool}>{d.school}</Text>
-                  <Text style={styles.degreeYears}>{d.years}</Text>
                 </View>
               ))}
             </View>
