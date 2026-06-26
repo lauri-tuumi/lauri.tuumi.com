@@ -55,8 +55,7 @@ export function createJsonLd(lang: "en" | "fi"): object {
       {
         "@type": "WebSite",
         "@id": `${BASE_URL}/#website`,
-        name: "Lauri Tuumi",
-        alternateName: ["Lauri Tuumi CV", "Lauri Tuumi Portfolio"],
+        name: "lauri.tuumi.com",
         url: `${BASE_URL}/`,
       },
       {
