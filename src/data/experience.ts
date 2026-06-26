@@ -13,9 +13,9 @@ export const experience = zExperience.parse({
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – nykyinen",
       bullets: [
-        "Arkkitehtuurisen suunnan johtaminen yli 10 hengen tiimissä – mahdollistavien mallien vakiinnuttaminen pakottavien sijaan, mikä vähentää perehdytyksen kitkaa ja pitää koodipohjan mukautuvana",
-        "Full stack -kehitys Next.js-, Node.js- ja Express-teknologioilla",
-        "Jaettujen TypeScript-abstraktioiden ja Zod-pohjaisten datasopimusten suunnittelu, jotka yhtenäistävät tiimikäytäntöjä rajoittamatta arkkitehtuurista joustavuutta",
+        "Nykyaikaisen arkkitehtuurin suunnittelu ja toteutus legacy-ratkaisujen korvaamiseksi liiketoimintakriittisten järjestelmien modernisoinnissa",
+        "Koodityylin ja käytäntöjen johtaminen yli 10 hengen kehitystiimissä. Mahdollistavia ja turvallisia malleja jäykkien ja pakottavien sääntöjen sijasta",
+        "Yhteisten kehityskäytäntöjen ja datasopimusten määrittely, jotka parantavat tiimin tehokkuutta ja yhdenmukaisuutta rajoittamatta arkkitehtuurillista joustavuutta",
       ],
     },
     {
@@ -65,9 +65,9 @@ export const experience = zExperience.parse({
       company: "Teollisuuden Voima Oyj",
       period: "12/2024 – present",
       bullets: [
-        "Led architectural direction for our 10+ person team, establishing enabling patterns over prescriptive ones — reducing onboarding friction while keeping the codebase adaptable",
-        "Full stack development with Next.js, Node.js, and Express",
-        "Designed shared TypeScript abstractions and Zod-based data contracts that standardise team practices without constraining architectural flexibility",
+        "Designing and implementing new architecture on a modern tech stack, replacing legacy solutions while preserving business-critical behavior",
+        "Led code style and conventions for our 10+ person development org, establishing enabling patterns over prescriptive ones",
+        "Introducing shared development patterns and data contracts that improve team consistency while preserving architectural flexibility",
       ],
     },
     {
