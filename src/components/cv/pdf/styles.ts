@@ -134,6 +134,40 @@ export const styles = StyleSheet.create({
     color: TEXT_MUTED,
     marginBottom: 6,
   },
+  // Projects
+  projectCard: {
+    borderLeftWidth: 2,
+    borderLeftColor: colors.primary,
+    paddingLeft: 8,
+    marginBottom: 8,
+  },
+  projectHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginBottom: 5,
+  },
+  projectLogo: {
+    width: 38,
+    height: 24,
+    objectFit: "contain",
+  },
+  projectTitle: {
+    fontSize: 9,
+    fontFamily: "Helvetica-Bold",
+    color: TEXT,
+    lineHeight: 1.15,
+  },
+  projectBody: {
+    fontSize: 8,
+    color: TEXT_MUTED,
+    lineHeight: 1.35,
+    marginBottom: 3,
+  },
+  projectLink: {
+    fontSize: 7.5,
+    color: NAVY,
+  },
   // Skills
   skillRow: {
     flexDirection: "row",
