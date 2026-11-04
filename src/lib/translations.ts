@@ -177,7 +177,7 @@ const uiEn = {
         id: "pories-website",
         title: "PoriES Website",
         body: [
-          "Built the Pori Entrepreneurship Society website as a Next.js app hosted in the cloud, with CI/CD via Git and Coolify handling deployment.",
+          "Built the Pori Entrepreneurship Society website as a Next.js application, with a version-controlled codebase and an automated deployment workflow for publishing updates.",
           "In addition to static content and a links page, the site allows easy event publishing so non-technical content administrators can work efficiently without touching application code.",
         ],
         link: { href: "https://www.pories.fi", label: "Visit site →" },
@@ -291,7 +291,7 @@ const uiFi = {
         id: "pories-website",
         title: "PoriES-verkkosivusto",
         body: [
-          "Rakensin Pori Entrepreneurship Societyn verkkosivuston pilvessä hostatuksi Next.js-sovellukseksi, jossa CI/CD kulkee Gitin kautta ja Coolify hoitaa käyttöönoton.",
+          "Rakensin Pori Entrepreneurship Societyn verkkosivuston Next.js-sovellukseksi, jonka koodi on versionhallinnassa ja jonka päivitykset julkaistaan automaattisen käyttöönottoprosessin avulla.",
           "Staattisen sisällön ja linkkisivun lisäksi sivusto mahdollistaa helpon tapahtumajulkaisun, jotta ei-tekniset sisällönhallinnoijat voivat työskennellä tehokkaasti ilman sovelluskoodiin koskemista.",
         ],
         link: { href: "https://www.pories.fi", label: "Avaa sivusto →" },
